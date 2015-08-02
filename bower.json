@@ -1,0 +1,9 @@
+{
+  "name": "ember-jquery-autocomplete",
+  "version": "0.1.0",
+  "main": "dist/ember-jquery-autocomplete.js",
+  "dependencies": {
+    "ember": "~1.11.1",
+    "devbridge-autocomplete": "~1.2.21"
+  }
+}
