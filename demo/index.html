@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ember-jquery-autocomplete demo</title>
+    <style>
+      .autocomplete-suggestions {
+        border: 1px solid #999;
+        background: #fff;
+        cursor: default;
+        overflow: auto;
+      }
+      .autocomplete-suggestion {
+        padding: 10px 5px;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .autocomplete-selected {
+        background: #e6e6e6;
+      }
+      .autocomplete-suggestions strong {
+        font-weight: normal; color: #37BC9B;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <script src="./../bower_components/jquery/dist/jquery.js"></script>
+    <script src="./../bower_components/ember/ember-template-compiler.js"></script>
+    <script src="./../bower_components/ember/ember.js"></script>
+    <script src="./../bower_components/devbridge-autocomplete/dist/jquery.autocomplete.js"></script>
+    <script src="./../dist/ember-jquery-autocomplete.js"></script>
+    <script>
+      App = Ember.Application.create();
+      App.ApplicationRoute = Ember.Route.extend({
+        model: function(){
+          return [
+            Ember.Object.create({value: "Red"}),
+            Ember.Object.create({value: "Green"}),
+            Ember.Object.create({value: "Blue"})
+          ]
+        },
+        selectedColor:''
+      });
+    </script>
+    
+    <h1>ember-jquery-autocomplete demo</h1>
+    <h2>Demo</h2>
+
+    <script type="text/x-handlebars" data-template-name="application">    
+    {{-autocomplete vocabulary=content name="colour" value=content.selectedColor auto-focus=true}}
+      <p>Selected color is {{content.selectedColor}}</p>
+    </script>
+
+  </body>
+</html>
